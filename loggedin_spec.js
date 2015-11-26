@@ -247,4 +247,10 @@ describe('Test login form', function() {
 		browser.waitForAngular();
 		console.log(element(by.xpath('//*[@id="module-2"]/div[1]/p/p')).getText());
 	});
+
+	it('should lickable on continue', function() {
+		browser.get(mainURL + '/app/courses');
+		element(by.id('enrolment-72810')).click();
+		expect(browser.getLocationAbsUrl()).toBe(/.*app\/course?id=72810/);
+	});
 });
